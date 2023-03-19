@@ -1,5 +1,11 @@
 const choices = ["rock", "paper", "scissors"];
 
+function playRound() {
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+}
+
 function computerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
@@ -7,6 +13,10 @@ function computerChoice() {
 function playerChoice() {
     let input = prompt("Type Rock, Paper or Scissors");
     input = input.toLowerCase();
+}
+
+function validateInput(choice) {
+return choices.includes(choice);
 }
 
 function checkWinner(choiceP, choiceC) {
