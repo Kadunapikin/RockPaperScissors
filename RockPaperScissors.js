@@ -1,6 +1,7 @@
 const choices = ["rock", "paper", "scissors"];
 const playerSelection = playerChoice();
 const computerSelection = computerChoice();
+let playerScore = 0;
 
 
 function game() {
