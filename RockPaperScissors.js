@@ -1,10 +1,10 @@
 const choices = ["rock", "paper", "scissors"];
 const playerSelection = playerChoice();
 const computerSelection = computerChoice();
+const winner = checkWinner(playerSelection, computerSelection);
 let playerScore = 0;
 let computerScore = 0;
 let roundCount = 1;
-
 
 
 function game() {
@@ -12,11 +12,23 @@ function game() {
 }
 
 function playRound() {
-    const winner = checkWinner(playerSelection, computerSelection);
-    console.log(`playerChoice ${playerSelection}`);
-    console.log(`computerChoice ${computerSelection}`);
-    console.log(winner);
+    while (roundCount <= 5) {
+        console.log(`playerChoice ${playerSelection}`);
+        console.log(`computerChoice ${computerSelection}`);    
+        console.log(`Round ${roundCount}:`);
+        console.log(winner);
+        console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+        roundCount ++;
+    }
+    if (playerScore > computerScore) {
+        console.log(`You won the game! Final score: ${playerScore}-${computerScore}`);
+    } else if (computerScore > playerScore) {
+        console.log(`You lost the game! Final score: ${computerScore}-${playerScore}`);
+    } else {
+        console.log(`It\'s a draw! Final score: ${playerScore}-${computerScore}`);
+    }
 }
+
 
 function computerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
@@ -47,17 +59,21 @@ function validateInput(choice) {
 return choices.includes(choice);
 }
 
-function checkWinner(choiceP, choiceC) {
-    if (choiceP === choiceC) {
-        return "it's a tie";
-    } else if (
-        (choiceP === "rock" && choiceC == "scissors") ||
-        (choiceP === "paper" && choiceC == "rock") ||
-        (choiceP === "scissors" && choiceC == "paper")) {
-    return `You win! ${playerSelection} beats ${computerSelection}`;
-    } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
-    }
+function checkWinner(userChoice, computerChoice) {
+    let roundWinner;
+  if (userChoice === computerChoice) {
+    roundWinner = "tie";
+  } else if (
+    (userChoice === "rock" && computerChoice === "scissors") ||
+    (userChoice === "paper" && computerChoice === "rock") ||
+    (userChoice === "scissors" && computerChoice === "paper")
+  ) {
+    roundWinner = "user";
+    userScore++;
+  } else {
+    roundWinner = "computer";
+    computerScore++;
+  }
 }
 
 game();
