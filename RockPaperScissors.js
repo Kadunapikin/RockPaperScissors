@@ -1,16 +1,16 @@
-<<<<<<< HEAD
 const choices = ["rock", "paper", "scissors"];
+const playerSelection = playerChoice();
+const computerSelection = computerChoice();
+
 
 function game() {
     playRound();
 }
 
 function playRound() {
-    const playerSelection = playerChoice();
-    const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
-    console.log(playerSelection);
-    console.log(computerSelection);
+    console.log(`playerChoice ${playerSelection}`);
+    console.log(`computerChoice ${computerSelection}`);
     console.log(winner);
 }
 
@@ -50,46 +50,10 @@ function checkWinner(choiceP, choiceC) {
         (choiceP === "rock" && choiceC == "scissors") ||
         (choiceP === "paper" && choiceC == "rock") ||
         (choiceP === "scissors" && choiceC == "paper")) {
-    return "player wins";
+    return `You win! ${playerSelection} beats ${computerSelection}`;
     } else {
-        return "computer wins"
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
 
 game();
-=======
-//write a getComputerChoice function that returns either of the choices array
-
-function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
-    return choices [Math.floor(Math.random() * 3)];
-}
-//console.log(getComputerChoice());
-
-//write a funtion that plays a single round of the game taking two paramaters of playerSelection and computerSelection
-
-function playRound(playerSelection, computerSelection) {
-    switch (playerSelection + computerSelection) {
-        case "rockscissors":
-        case "paperrock":
-        case "scissorspaper":
-            console.log("USER WINS");
-            break;
-        case "rockpaper":
-        case "paperscissors":
-        case "scissorsrock":
-            console.log("USER LOSES");
-            break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-            console.log("IT\'S A DRAW");
-            break;
-      }
-  }
-  
-  const playerSelection = "scissors";
-  const computerSelection = getComputerChoice();
-  console.log(playerSelection + computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
->>>>>>> c55d55e87670aa53696c6c219393b189fa8b06a8
