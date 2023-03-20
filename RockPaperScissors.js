@@ -2,15 +2,23 @@ const computerChoiceDisplay = document.getElementById('computer-choice');
 const playerChoiceDisplay = document.getElementById('player-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('button');
+const choices = ["rock", "paper", "scissors"];
 let userChoice;
+// let computerChoice;
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
     playerChoiceDisplay.innerHTML = userChoice;
+    getComputerChoice();
 }));
 
+function getComputerChoice() {
+    const randomNumber = choices[Math.floor(Math.random() * choices.length)];
+    computerChoiceDisplay.innerHTML = randomNumber
+}
 
-// const choices = ["rock", "paper", "scissors"];
+
+
 // const playerSelection = playerChoice();
 // const computerSelection = computerChoice();
 // const winner = checkWinner(playerSelection, computerSelection);
@@ -41,10 +49,6 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 //     }
 // }
 
-
-// function computerChoice() {
-//     return choices[Math.floor(Math.random() * choices.length)];
-// }
 
 // // function playerChoice(){
 // //     let input = prompt("Type Rock, Paper or Scissors");
