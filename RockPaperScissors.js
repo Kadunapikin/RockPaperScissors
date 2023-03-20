@@ -3,6 +3,7 @@ const playerSelection = playerChoice();
 const computerSelection = computerChoice();
 let playerScore = 0;
 let computerScore = 0;
+let roundCount = 1;
 
 
 
