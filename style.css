@@ -49,6 +49,11 @@ background-color: beige;
     margin: 0px 15px;
 }
 
+.choice:hover {
+    cursor: pointer;
+    background: rgb(241, 168, 181);
+}
+
 .decide {
     text-align: center;
 }
