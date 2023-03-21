@@ -5,6 +5,7 @@ const possibleChoices = document.querySelectorAll('button');
 const choices = ["rock", "paper", "scissors"];
 const computerScoreDisplay = document.getElementById('computer-score');
 const playerScoreDisplay = document.getElementById('player-score');
+const roundDisplay = document.getElementById('round');
 let userChoice;
 let computerChoice;
 let playerScore = 0;
