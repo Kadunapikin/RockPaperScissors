@@ -17,6 +17,8 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     getResult();
 }));
 
+
+
 function getComputerChoice() {
     const randomNumber = choices[Math.floor(Math.random() * choices.length)];
     computerChoice = randomNumber
@@ -24,7 +26,7 @@ function getComputerChoice() {
 }
 
  const getResult = () => {
-switch (userChoice + computerChoice) {
+    switch (userChoice + computerChoice) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
@@ -47,8 +49,6 @@ switch (userChoice + computerChoice) {
     playerScore++;
     playerScoreDisplay.innerHTML = playerScore;
     resultDisplay.innerHTML = `YOU WIN! score: Player Score ${playerScore}-${computerScore} Computer Score`;
-    console.log(playerScore);
-    console.log('Its a win');
  }
 
  function lose() {
