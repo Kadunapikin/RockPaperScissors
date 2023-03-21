@@ -4,19 +4,40 @@ const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('button');
 const choices = ["rock", "paper", "scissors"];
 let userChoice;
-// let computerChoice;
+let computerChoice;
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
     playerChoiceDisplay.innerHTML = userChoice;
     getComputerChoice();
+    getResult();
 }));
 
 function getComputerChoice() {
     const randomNumber = choices[Math.floor(Math.random() * choices.length)];
-    computerChoiceDisplay.innerHTML = randomNumber
+    computerChoice = randomNumber
+    computerChoiceDisplay.innerHTML = computerChoice
 }
 
+ const getResult = () => {
+switch (userChoice + computerChoice) {
+    case 'rockscissors':
+    case 'paperrock':
+    case 'scissorspaper':
+        resultDisplay.innerHTML = "YOU WIN!"
+        break;
+    case 'paperscissors':
+    case 'scissorsrock':
+    case 'rockpaper':
+        resultDisplay.innerHTML = "YOU LOSE!"
+        break;
+    case 'paperpaper':
+    case 'scissorsscissors':
+    case 'rockrock':
+        resultDisplay.innerHTML = "IT'S A DRAW!"
+        break;
+    }
+ }
 
 
 // const playerSelection = playerChoice();
@@ -50,44 +71,3 @@ function getComputerChoice() {
 // }
 
 
-// // function playerChoice(){
-// //     let input = prompt("Type Rock, Paper or Scissors");
-// //     while (input == null){
-// //       input = prompt("Type Rock, Paper or Scissors");
-// //     }
-// //     input = input.toLowerCase();
-// //     let check = validateInput(input);
-// //     while(check == false){
-// //       input = prompt(
-// //        "type Rock, Paper or Scissors. Spelling needs to be exact, but capitalization doesnt matter"
-// //       );
-// //       while (input == null){
-// //         input = prompt("type Rock, Paper or Scissors");
-// //      }
-// //      input = input.toLowerCase();
-// //      check = validateInput(input);
-// //    } 
-// //    return input; 
-// //   }
-
-
-// function validateInput(choice) {
-// return choices.includes(choice);
-// }
-
-// function checkWinner(userChoice, computerChoice) {
-//     let roundWinner;
-//   if (userChoice === computerChoice) {
-//     roundWinner = "tie";
-//   } else if (
-//     (userChoice === "rock" && computerChoice === "scissors") ||
-//     (userChoice === "paper" && computerChoice === "rock") ||
-//     (userChoice === "scissors" && computerChoice === "paper")
-//   ) {
-//     roundWinner = "user";
-//     userScore++;
-//   } else {
-//     roundWinner = "computer";
-//     computerScore++;
-//   }
-// }
