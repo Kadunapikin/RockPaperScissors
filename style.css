@@ -10,10 +10,19 @@
 
 .header {
     background-color: white;
+    padding: 20px;
 }
 
 .header > h1 {
     color: rgba(0, 0, 0, 0.705);
     text-align: center;
     font-family: sans-serif;
+}
+
+.choices-display {
+    display: flex;
+    background-color: bisque;
+    text-align: center;
+    justify-content: space-around;
+    padding: 30px;
 }
