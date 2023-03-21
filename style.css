@@ -37,6 +37,12 @@ background-color: beige;
     text-align: center;
 }
 
+.round {
+    background-color: rgb(6, 127, 233);
+    padding: 10px;
+    text-align: center;
+}
+
 .choices {
     margin: 50px 0;
     text-align: center;
