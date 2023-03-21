@@ -3,6 +3,8 @@ const playerChoiceDisplay = document.getElementById('player-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('button');
 const choices = ["rock", "paper", "scissors"];
+const computerScoreDisplay = document.getElementById('computer-score');
+const playerScoreDisplay = document.getElementById('player-score')
 let userChoice;
 let computerChoice;
 
