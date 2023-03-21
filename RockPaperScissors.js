@@ -4,13 +4,11 @@ const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('button');
 const choices = ["rock", "paper", "scissors"];
 const computerScoreDisplay = document.getElementById('computer-score');
-const playerScoreDisplay = document.getElementById('player-score')
+const playerScoreDisplay = document.getElementById('player-score');
 let userChoice;
 let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
-
-
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
@@ -30,52 +28,35 @@ switch (userChoice + computerChoice) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
-        playerScoreDisplay.innerHTML = playerScore++;
-        resultDisplay.innerHTML = "YOU WIN!"
+        win();
         break;
     case 'paperscissors':
     case 'scissorsrock':
     case 'rockpaper':
-        computerScoreDisplay.innerHTML = computerScore++;
-        resultDisplay.innerHTML = "YOU LOSE!"
+        lose();
         break;
     case 'paperpaper':
     case 'scissorsscissors':
     case 'rockrock':
-        resultDisplay.innerHTML = "IT'S A DRAW!"
+        draw();
         break;
     }
  }
 
+ function win() {
+    playerScore++;
+    playerScoreDisplay.innerHTML = playerScore;
+    resultDisplay.innerHTML = `YOU WIN! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+    console.log(playerScore);
+    console.log('Its a win');
+ }
 
-// const playerSelection = playerChoice();
-// const computerSelection = computerChoice();
-// const winner = checkWinner(playerSelection, computerSelection);
-// let playerScore = 0;
-// let computerScore = 0;
-// let roundCount = 1;
+ function lose() {
+    computerScore++;
+    computerScoreDisplay.innerHTML = computerScore;
+    resultDisplay.innerHTML = `YOU LOSE! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+ }
 
-
-// // function game() {
-// //     playRound();
-// // }
-
-// function playRound() {
-//     while (roundCount <= 5) {
-//         console.log(`playerChoice ${playerSelection}`);
-//         console.log(`computerChoice ${computerSelection}`);    
-//         console.log(`Round ${roundCount}:`);
-//         console.log(winner);
-//         console.log(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
-//         roundCount ++;
-//     }
-//     if (playerScore > computerScore) {
-//         console.log(`You won the game! Final score: ${playerScore}-${computerScore}`);
-//     } else if (computerScore > playerScore) {
-//         console.log(`You lost the game! Final score: ${computerScore}-${playerScore}`);
-//     } else {
-//         console.log(`It\'s a draw! Final score: ${playerScore}-${computerScore}`);
-//     }
-// }
-
-
+ function draw() {
+    resultDisplay.innerHTML = `IT'S A DRAW! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+ }
