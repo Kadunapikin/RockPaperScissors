@@ -6,6 +6,7 @@ const choices = ["rock", "paper", "scissors"];
 let userChoice;
 let computerChoice;
 
+
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
     playerChoiceDisplay.innerHTML = userChoice;
