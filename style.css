@@ -19,10 +19,20 @@
     font-family: sans-serif;
 }
 
-.choices-display {
+.choices-display, .score-board {
     display: flex;
     background-color: bisque;
-    text-align: center;
+    color: rgb(2, 2, 31);
     justify-content: space-around;
     padding: 30px;
+}
+
+.score-board {
+background-color: beige;
+}
+
+.result {
+    background-color: aliceblue;
+    padding: 20px;
+    text-align: center;
 }
