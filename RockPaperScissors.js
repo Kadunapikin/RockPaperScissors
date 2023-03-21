@@ -7,6 +7,9 @@ const computerScoreDisplay = document.getElementById('computer-score');
 const playerScoreDisplay = document.getElementById('player-score')
 let userChoice;
 let computerChoice;
+let playerScore = 0;
+let computerScore = 0;
+
 
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
@@ -27,11 +30,13 @@ switch (userChoice + computerChoice) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
+        playerScoreDisplay.innerHTML = playerScore++;
         resultDisplay.innerHTML = "YOU WIN!"
         break;
     case 'paperscissors':
     case 'scissorsrock':
     case 'rockpaper':
+        computerScoreDisplay.innerHTML = computerScore++;
         resultDisplay.innerHTML = "YOU LOSE!"
         break;
     case 'paperpaper':
