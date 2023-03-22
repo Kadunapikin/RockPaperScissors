@@ -32,6 +32,7 @@ function handleClick() {
         disableButtons();
     }
 }
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', handleClick));
 
 function winner(ps, cs, rn) {
     if (rn != 5) {
