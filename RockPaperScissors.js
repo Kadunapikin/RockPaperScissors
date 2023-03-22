@@ -18,9 +18,20 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     playerChoiceDisplay.innerHTML = userChoice;
     getComputerChoice();
     getResult();
+    winner(playerScore, computerScore, round);
 }));
 
-
+function winner(ps, cs, rn) {
+    if (rn != 5) {
+        finalResult.innerHTML = "";
+    } else if (ps > cs && rn === 5) {
+        finalResult.innerHTML = "PLAYER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!"
+    } else if (ps < cs && rn === 5) {
+        finalResult.innerHTML = "COMPUTER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
+    } else {
+        finalResult.innerHTML = "IT'S A TIE!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
+    }
+}
 
 function getComputerChoice() {
     const randomNumber = choices[Math.floor(Math.random() * choices.length)];

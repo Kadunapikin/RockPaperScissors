@@ -18,7 +18,7 @@
     padding: 25px;
 }
 
-.winner-display > p {
+.winner-display > h1 {
     color: rgba(0, 0, 0, 0.705);
     text-align: center;
     font-family: sans-serif;
