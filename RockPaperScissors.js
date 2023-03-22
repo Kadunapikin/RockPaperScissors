@@ -12,6 +12,7 @@ let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+let clickCount = 0;
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
@@ -26,10 +27,14 @@ function winner(ps, cs, rn) {
         finalResult.innerHTML = "";
     } else if (ps > cs && rn === 5) {
         finalResult.innerHTML = "PLAYER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!"
+        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
+
     } else if (ps < cs && rn === 5) {
         finalResult.innerHTML = "COMPUTER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
+        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
     } else {
         finalResult.innerHTML = "IT'S A TIE!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
+        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
     }
 }
 
@@ -64,7 +69,7 @@ function getComputerChoice() {
     roundDisplay.innerHTML = round;
     playerScore++;
     playerScoreDisplay.innerHTML = playerScore;
-    resultDisplay.innerHTML = `YOU WIN! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+    resultDisplay.innerHTML = `YOU WIN ROUND ${round}!`;
  }
 
  function lose() {
@@ -72,11 +77,11 @@ function getComputerChoice() {
     roundDisplay.innerHTML = round;
     computerScore++;
     computerScoreDisplay.innerHTML = computerScore;
-    resultDisplay.innerHTML = `YOU LOSE! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+    resultDisplay.innerHTML = `YOU LOSE ROUND ${round}!`;
  }
 
  function draw() {
     round++;
     roundDisplay.innerHTML = round;
-    resultDisplay.innerHTML = `IT'S A DRAW! score: Player Score ${playerScore}-${computerScore} Computer Score`;
+    resultDisplay.innerHTML = `IT'S A DRAW FOR ROUND ${round}!`;
  }
