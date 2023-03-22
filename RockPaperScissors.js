@@ -28,6 +28,9 @@ function disableButtons() {
 
 function handleClick() {
     clickCount++;
+    if (clickCount >= 5) {
+        disableButtons();
+    }
 }
 
 function winner(ps, cs, rn) {
