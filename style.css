@@ -10,7 +10,18 @@
 
 .header {
     background-color: white;
-    padding: 20px;
+    padding: 15px;
+}
+
+.winner-display {
+    background-color: white;
+    padding: 25px;
+}
+
+.winner-display > p {
+    color: rgba(0, 0, 0, 0.705);
+    text-align: center;
+    font-family: sans-serif;
 }
 
 .header > h1 {
