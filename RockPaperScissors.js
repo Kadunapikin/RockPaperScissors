@@ -26,6 +26,10 @@ function disableButtons() {
     possibleChoices.forEach(possibleChoice => possibleChoice.disabled = true);
 }
 
+function handleClick() {
+    clickCount++;
+}
+
 function winner(ps, cs, rn) {
     if (rn != 5) {
         finalResult.innerHTML = "";
