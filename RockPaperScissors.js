@@ -10,6 +10,7 @@ let userChoice;
 let computerChoice;
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
@@ -47,17 +48,23 @@ function getComputerChoice() {
  }
 
  function win() {
+    round++;
+    roundDisplay.innerHTML = round;
     playerScore++;
     playerScoreDisplay.innerHTML = playerScore;
     resultDisplay.innerHTML = `YOU WIN! score: Player Score ${playerScore}-${computerScore} Computer Score`;
  }
 
  function lose() {
+    round++;
+    roundDisplay.innerHTML = round;
     computerScore++;
     computerScoreDisplay.innerHTML = computerScore;
     resultDisplay.innerHTML = `YOU LOSE! score: Player Score ${playerScore}-${computerScore} Computer Score`;
  }
 
  function draw() {
+    round++;
+    roundDisplay.innerHTML = round;
     resultDisplay.innerHTML = `IT'S A DRAW! score: Player Score ${playerScore}-${computerScore} Computer Score`;
  }
