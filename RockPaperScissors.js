@@ -22,6 +22,10 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     winner(playerScore, computerScore, round);
 }));
 
+function disableButtons() {
+    possibleChoices.forEach(possibleChoice => possibleChoice.disabled = true);
+}
+
 function winner(ps, cs, rn) {
     if (rn != 5) {
         finalResult.innerHTML = "";
