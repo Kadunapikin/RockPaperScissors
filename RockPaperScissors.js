@@ -38,7 +38,7 @@ function winner(ps, cs, rn) {
     if (rn != 5) {
         finalResult.innerHTML = "";
     } else if (ps > cs && rn === 5) {
-        finalResult.innerHTML = "PLAYER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!"
+        finalResult.innerHTML = "PLAYER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!",
         resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
 
     } else if (ps < cs && rn === 5) {
