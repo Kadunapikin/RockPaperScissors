@@ -20,7 +20,16 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     getComputerChoice();
     getResult();
     winner(playerScore, computerScore, round);
+    refreshPageAfter5round();
 }));
+
+function refreshPageAfter5round() {
+    if (round === 5) {
+        setTimeout(function() {
+            location.reload();
+        }, 3000);
+    }
+}
 
 function disableButtons() {
     possibleChoices.forEach(possibleChoice => possibleChoice.disabled = true);
@@ -39,14 +48,14 @@ function winner(ps, cs, rn) {
         finalResult.innerHTML = "";
     } else if (ps > cs && rn === 5) {
         finalResult.innerHTML = "PLAYER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!",
-        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
+        resultDisplay.innerHTML = "PAGE WILL REFRESH IN 3 SECONDS TO PLAY AGAIN!!!!!!"
 
     } else if (ps < cs && rn === 5) {
         finalResult.innerHTML = "COMPUTER WINS THE GAME!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
-        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
+        resultDisplay.innerHTML = "PAGE WILL REFRESH IN 3 SECONDS TO PLAY AGAIN!!!!!!"
     } else {
         finalResult.innerHTML = "IT'S A TIE!!!!!!!!!!!!!!!!!!!!!! Refresh page to play again!!!" 
-        resultDisplay.innerHTML = "PLEASE REFRESH PAGE TO PLAY AGAIN!!!!!!"
+        resultDisplay.innerHTML = "PAGE WILL REFRESH IN 3 SECONDS TO PLAY AGAIN!!!!!!"
     }
 }
 
