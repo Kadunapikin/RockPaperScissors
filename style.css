@@ -13,6 +13,10 @@
     padding: 15px;
 }
 
+#rps {
+    color: rgb(241, 11, 11);
+}
+
 .winner-display {
     background-color: white;
     padding: 25px;
